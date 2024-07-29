@@ -537,6 +537,18 @@ iframe {
   -ms-box-shadow: 0 1px 5px 0px rgba(0,0,0,0.2); 
 }
 
+.modal-content {
+  background: rgba(0, 0, 0, 0.8); /* quasi-transparent black */
+  border: none;
+  border-radius: 10px;
+}
+.modal-header, .modal-footer {
+  border: none;
+}
+.modal-body {
+  color: #ffff; /* Darker text for better readability */
+}
+
 /*[ Top bar ]
 ===========================================================*/
 .topbar {
@@ -632,8 +644,9 @@ iframe {
 .logo {
   display: block;
   position: absolute;
-  left: 52px;
+  left: 45px;
   top: 50%;
+  margin-right: 20px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -650,7 +663,7 @@ iframe {
 -----------------------------------------------------------*/
 .main_menu {
   list-style-type: none;
-  margin: 0px;
+  margin:  0px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

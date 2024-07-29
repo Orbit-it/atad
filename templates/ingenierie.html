@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load category_template_tags %}
+{% block content %}
+<style type="text/css">
+	.selection-2{
+	display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	}
+
+    .modal-content {
+      background: rgba(0, 0, 0, 0.8); /* quasi-transparent black */
+      border: none;
+      border-radius: 10px;
+    }
+    .modal-header, .modal-footer {
+      border: none;
+    }
+    .modal-body {
+      color: #ffff; /* Darker text for better readability */
+    }
+
+.bullet-points p {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .bullet-points p::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 40px;
+            line-height: 0.5em;
+            color: #877c02; /* Color of the bullet point, can be adjusted */
+        }
+
+		.cardtop {
+			position: absolute;
+            right: 5%; /* Décalage de la carte à droite */
+            top: 30%; 
+            width: 80%; /* Utilisation de pourcentages pour la largeur */
+            max-width: 600px; /* Limite maximale de la largeur */
+            height: auto; /* Hauteur automatique */
+            margin: 7% auto; /* Centrage horizontal et marge en haut */
+            padding: 2%; /* Padding pour le contenu */
+			background: white; /* Couleur de fond pour la carte */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optionnel: ajout d'une ombre */
+            border: 1px solid #ddd; /* Optionnel: bordure pour la carte */
+        }
+        
+        .cardtop-body {
+            margin-top: 5%;
+			margin-left: 80% auto;
+        }
+        
+        .cardtop-title {
+            justify-content: flex-start; 
+            color: black; 
+            font-size: 25px; 
+            font-weight: bold;
+        }
+        
+        .cardtop-text {
+            align-self: center; 
+            text-align: justify; 
+            color: black;
+        }
+        
+        @media (max-width: 500px) {
+            .cardtop {
+				position: absolute;
+				top: 15%; 
+                width: 90%; /* Réduire la largeur sur les petits écrans */
+                margin: 5% auto; /* Ajuster la marge */
+            }
+            
+            .cardtop-title {
+                font-size: 20px; /* Réduire la taille de la police pour les petits écrans */
+            }
+        }
+
+		@media (min-width: 500px) and (max-width: 750px) {
+            .cardtop {
+				position: absolute;
+				top: 15%; 
+                width: 90%; /* Réduire la largeur sur les petits écrans */
+                margin: 5% auto; /* Ajuster la marge */
+            }
+            
+            .cardtop-title {
+                font-size: 20px; /* Réduire la taille de la police pour les petits écrans */
+            }
+        }
+
+</style>
+<div class="row"> 
+	<!-- Title Page -->
+	<div class="item-slick1 p-t-60 p-b-100" style="background-image: url(/static/images/inge.jpg); width: 60%;">
+
+		<div class="cardtop">
+			<div class="cardtop-body" style="margin-top: 5%;">
+				<h5 class="cardtop-title">INGENIERIE</h5>
+	
+				<p class="cardtop-text t-center">
+                    Chez ATAD, notre service d'ingénierie se distingue par son expertise et son engagement envers l'excellence. Nous proposons des solutions complètes et innovantes, allant de la conception à la réalisation, pour répondre aux besoins spécifiques de nos clients. Nos ingénieurs qualifiés utilisent les dernières technologies et méthodologies pour assurer la précision, la sécurité et la durabilité de chaque projet.
+                </p>
+			</div>
+	
+		</div>
+	</div>
+
+</div>
+
+
+	<!-- Content page -->
+	<section class="py-3 py-md-5 py-xl-8">
+		
+		<div class="container mt-1" id="etudesconception">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<img src="{% static 'images/design.jpg' %}" class="card-img" alt="Image">
+					</div>
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Etudes & Conception</h5>
+							<p class="card-text text-justify" style="color: black;">
+                                Chez ATAD, la sous-section Études et Conception est dédiée à l'analyse précise et à la conception innovante de vos projets. Nos experts utilisent des outils de pointe pour offrir des solutions sur mesure, garantissant des plans détaillés et optimisés. Nous transformons vos visions en réalités concrètes, en alliant créativité et rigueur technique.
+                            </p>
+							<button type="button" class="btn btn-outline-primary t-center" data-toggle="modal" data-target="#exampleModal" data-whatever="Etudes & Conception">Demander un devis</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+        <div class="container mt-1" id="design">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Design</h5>
+							<p class="card-text text-justify" style="color: black;">
+                                Chez ATAD, notre sous-section Design se consacre à la création de solutions esthétiques et fonctionnelles pour vos projets. Nos designers utilisent des technologies de pointe pour élaborer des concepts innovants et sur mesure, alliant style et praticité. Nous transformons vos idées en designs raffinés et détaillés, assurant une réalisation harmonieuse et efficace.
+                            </p>
+							<button type="button" class="btn btn-outline-primary t-center" data-toggle="modal" data-target="#exampleModal" data-whatever="Design">Demander un devis</button>
+						</div>
+					</div>
+                    <div class="col-md-6">
+						<img src="{% static 'images/design.jpg' %}" class="card-img" alt="Image">
+					</div>
+				</div>
+			</div>
+		</div>
+	
+
+
+		<div class="container mt-1" id="rnd">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<img src="{% static 'images/rnd.jpg' %}" class="card-img" alt="Image">
+					</div>
+					<div class="col-md-6">
+						<div class="card-body t-center">
+							<h5 class="card-title entry-title">Recherche & Developpement</h5>
+							<p class="card-text" style="color: black; text-align: justify;">
+                                Chez ATAD, la sous-section Recherche & Développement est dédiée à l'innovation et à l'amélioration continue de nos services. Nos équipes R&D utilisent des technologies avancées pour explorer de nouvelles idées et optimiser les processus existants. Nous développons des solutions pionnières et sur mesure, garantissant que nos projets restent à la pointe de l'ingénierie et répondent aux besoins évolutifs de nos clients.
+                            </p>
+							<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Rercherche & Developpement" >Demander un devis</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="container mt-1" id="specialmachine">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Machines Spéciales</h5>
+							<p class="card-text text-justify" style="color: black;">
+                                Chez ATAD, la sous-section Fabrication de Machines Spéciales se concentre sur la conception et la production d'équipements sur mesure adaptés à vos besoins spécifiques. Nos experts utilisent des technologies avancées pour créer des machines innovantes et fiables, garantissant une performance optimale et une intégration parfaite dans vos processus. Nous transformons vos exigences en solutions techniques précises et efficaces, assurant la qualité et la durabilité de chaque réalisation. 
+                            </p>
+							<button type="button" class="btn btn-outline-primary t-center" data-toggle="modal" data-target="#exampleModal" data-whatever="Machines Spéciales">Demander un devis</button>
+						</div>
+					</div>
+                    <div class="col-md-6">
+						<img src="{% static 'images/mac.jpg' %}" class="card-img" alt="Image">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+	
+
+		<!-----------------Modal du Formualire de Devis --------------------------->
+		
+	  </section>
+
+
+	  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-body">
+			  <form>
+				<div class="form-group row center">
+					<label class="control-label col-sm-2" for="name">Nom & Prenom:</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="name" placeholder="Entrer votre Nom et Prenom">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="control-label col-sm-2" for="tel">Tel:</label>
+					<div class="col-sm-10">
+					  <input type="tel" class="form-control" id="tel" placeholder="Entrer votre Numéro de Télephone">
+					</div>
+				  </div>
+
+				  <div class="form-group row">
+					<label class="control-label col-sm-2" for="email">Email:</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="email" placeholder="Entrer votre email">
+					</div>
+				  </div>
+					<div class="form-group row mt-3">
+						<label class="control-label col-sm-2" for="tel">Objet:</label>
+						<div class="col-sm-10">
+						  <input type="texte" class="form-control" id="object">
+						</div>
+					  </div>
+				
+				<div class="form-group">
+				  <label for="message-text" class="col-form-label">Message:</label>
+				  <textarea class="form-control" id="message-text"></textarea>
+				</div>
+			  </form>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+			  <button type="button" class="btn btn-primary" id="envoyer">Envoyer</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+	  <div class="modal fade" id="statusSuccessModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
+		<div class="modal-dialog modal-dialog-centered modal-sm" role="document"> 
+			<div class="modal-content"> 
+				<div class="modal-body text-center p-lg-4"> 
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+						<circle class="path circle" fill="none" stroke="#198754" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+						<polyline class="path check" fill="none" stroke="#198754" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /> 
+					</svg> 
+					<h4 class="text-success mt-3">Demande de devis envoyée !</h4> 
+					<p class="mt-3">Nous vous remercions.</p>
+					<button id="okval" type="button" class="btn btn-sm mt-3 btn-success" data-bs-dismiss="modal">Ok</button> 
+				</div> 
+			</div> 
+		</div> 
+	</div>
+
+		{% endblock content %}

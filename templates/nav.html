@@ -19,37 +19,100 @@
 			<div class="wrap_header">
 				<!-- Logo -->
 				<a href="/" class="logo">
-					<img src="{% static 'images/logolong.png' %}" width="250"  alt="LOGO">
+					<img src="{% static 'images/logo.png' %}" width="250"  alt="LOGO">
 				</a>
 
 				<!-- Menu -->
-				<div class="wrap_menu">
+				<div class="wrap_menu" style="margin-left: 20%;">
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
 								<a href="/">Accueil</a>
 							</li>
 
-							<li id="nav-links"><a href="{% url 'core:shop' %}">Services</a>
+							<li id="nav-links"><a href="{% url 'core:services' %}">Construction Métallique</a>
 								<ul class="sub_menu">
-									<li><a href="#nettoyage">Nettoyage et Entretien</a></li>
-									<li><a href="#veillehyvernale">Veille Hyvernale</a></li>
-									<li><a href="#3mcovering">3M Covering</a></li>
-									<li><a href="#lustrage">Vente de linge / Deco</a></li>
+									<li><a href="{% url 'core:services' %}#charpente">Charpente Métallique</a></li>
+									<li><a href="{% url 'core:services' %}#abris">Abris</a></li>
+									<li><a href="{% url 'core:services' %}#portes">Portes<i class="fas fa-chevron-right ml-3"></i></a>
+										<ul class="sub_menu">
+											<li><a href="{% url 'core:services' %}#portes">Rideaux métallique</a></li>
+											<li><a href="{% url 'core:services' %}#portes">Porte Garage</a></li>
+											<li><a href="{% url 'core:services' %}#portes">Porte Industrielle</a></li>
+											<li><a href="{% url 'core:services' %}#portes">Porte Rapide</a></li>
+											<li><a href="{% url 'core:services' %}#portes">Porte Coulissante</a></li>
+											<li><a href="{% url 'core:services' %}#ferforge">Porte Fer Forgé</a></li>
+										</ul>
+									</li>
+									<li><a href="{% url 'core:services' %}#escalier">Escallier & Mezzanine</a></li>
+									<li><a href="{% url 'core:services' %}#cabine">Cabine chantier</a></li>
+									<li><a href="{% url 'core:services' %}#reservoir">Reservoirs</a></li>
+									<li><a href="{% url 'core:services' %}#fonderie">Fonderie & Moulage</a></li>
 								</ul>
 							</li>
 
-							<li><a href="#">Occasions</a>
+							<li id="nav-links"><a href="{% url 'core:shop' %}">Services Industriels</a>
+								<ul class="sub_menu">
+									<li><a href="{% url 'core:shop' %}#maintenance">Maintenance<i class="fas fa-chevron-right ml-3"></i></a>
+										<ul class="sub_menu">
+											<li><a href="{% url 'core:shop' %}#maintenance">Préventive / Corrective</a></li>
+											<li><a href="{% url 'core:shop' %}#maintenance">Installation Electrique</a></li>
+											<li><a href="{% url 'core:shop' %}#maintenance">Plomberie</a></li>
+											<li><a href="{% url 'core:shop' %}#maintenance">Installation d'air</a></li>
+											<li><a href="{% url 'core:shop' %}#maintenance">Rebobinage & Réparation</a></li>
+										</ul>
+									</li>
+									<li><a href="{% url 'core:shop' %}#tabaff">Equipement d'Atelier<i class="fas fa-chevron-right ml-3"></i></a>
+										<ul class="sub_menu">
+											<li><a href="{% url 'core:shop' %}#tabaff">Tableau d'Affichage</a></li>
+											<li><a href="{% url 'core:shop' %}#projet5s">Projet 5 S</a></li>
+											<li><a href="{% url 'core:shop' %}#rack">Rack de Stockage</a></li>
+											<li><a href="{% url 'core:shop' %}#charriot">Charriot Industriel</a></li>
+											<li><a href="{% url 'core:shop' %}#echaffaudage">Echaffaudage</a></li>
+											<li><a href="{% url 'core:shop' %}#table">Table de Travail</a></li>
+											<li><a href="{% url 'core:shop' %}#gabaris">Gabaris</a></li>
+										</ul>	
+									<li><a href="{% url 'core:shop' %}#sablagepeinture">Sablage & Peinture</a></li>
+									<li><a href="{% url 'core:shop' %}#cncplasma">CNC Laser & Plasma</a></li>
+									<li><a href="{% url 'core:shop' %}#genie">Genie Civil</a></li>
+								</ul>
 							</li>
 
-							<li><a href="{% url 'core:order-summary' %}">Boutique</a>	
+							<li id="nav-links"><a href="{% url 'core:manutention' %}">Manutention</a>
+								<ul class="sub_menu">
+									<li><a href="{% url 'core:manutention' %}#pontroulant">Pont Roulant<i class="fas fa-chevron-right ml-3"></i></a>
+										<ul class="sub_menu">
+											<li><a href="{% url 'core:manutention' %}#pontroulant">Mono-poutre</a></li>
+											<li><a href="{% url 'core:manutention' %}#pontroulant">Bi-poutre</a></li>
+										</ul>
+									</li>
+									<li><a href="{% url 'core:manutention' %}#portique">Portique</a></li>
+									<li><a href="{% url 'core:manutention' %}#potence">Potence de Manutention</a></li>
+									<li><a href="{% url 'core:manutention' %}#solution">Solution Technique</a></li>
+								</ul>
+							</li>
+
+							<li id="nav-links"><a href="{% url 'core:ingenierie' %}">Ingénierie</a>
+								<ul class="sub_menu">
+									<li><a href="{% url 'core:ingenierie' %}#etudesconception">Etudes & Conception</a></li>
+									<li><a href="{% url 'core:ingenierie' %}#design">Design</a></li>
+									<li><a href="{% url 'core:ingenierie' %}#rnd">R&D</a></li>
+									<li><a href="{% url 'core:ingenierie' %}#specialmachine">Machines Spéciales</a></li>
+								</ul>
+							</li>
+
+							<li><a href="{% url 'core:order-summary' %}">Location & Vente</a>	
+								<ul class="sub_menu">
+									<li><a href="{% url 'core:order-summary' %}">Location</a></li>
+									<li><a href="{% url 'core:order-summary' %}">Boutique</a></li>	
+								</ul>
 							</li>	
 							
 							<li>
 								<div class="header-wrapicon2">
 								<a href="{% url 'core:order-summary' %}">
 									
-									<img src="{% static 'images/icons/bateau-a-voile.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+									<img src="{% static 'images/icons/boutique.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">
 									<span class="header-icons-noti">0</span>
 									</a>
 								</div>
@@ -76,7 +139,7 @@
 		<div class="wrap_header_mobile">
 			<!-- Logo moblie -->
 			<a href="/" class="logo-mobile">
-				<img src="{% static 'images/logolong.png' %}" alt="IMG-LOGO">
+				<img src="{% static 'images/logo.png' %}" alt="IMG-LOGO">
 			</a>
 
 			<!-- Button show menu -->
@@ -89,7 +152,7 @@
 
 					<div class="header-wrapicon2">
 						<a href="{% url 'core:order-summary' %}">
-						<img src="{% static 'images/icons/bateau-a-voile.png' %}" alt="ICON">
+						<img src="{% static 'images/icons/boutique.png' %}" alt="ICON">
 						<span class="header-icons-noti">0</span>
 						</a>
 						<!-- Header cart noti -->
@@ -108,23 +171,27 @@
 		<!-- Menu Mobile -->
 		<div class="wrap-side-menu" >
 			<nav class="side-menu">
-				<ul class="main-menu">
-					
-
+				<ul class="main_menu">
 					<li class="item-menu-mobile">
 						<a href="/">Accueil</a>
 					</li>
 
-					<li class="item-menu-mobile"><a href="{% url 'core:shop' %}">Services</a>
-						
+					<li class="item-menu-mobile" id="nav-links"><a href="{% url 'core:services' %}">Construction Métallique</a>
 					</li>
 
-					<li class="item-menu-mobile">
-						<a href="">Occasions</a>
+					<li class="item-menu-mobile" id="nav-links"><a href="{% url 'core:shop' %}">Services Industriels</a>
 					</li>
 
+					<li class="item-menu-mobile" id="nav-links"><a href="{% url 'core:manutention' %}">Manutention</a>
+					</li>
+
+					<li class="item-menu-mobile" id="nav-links"><a href="{% url 'core:ingenierie' %}">Ingénierie</a>
+					</li>
+
+					<li class="item-menu-mobile"><a href="{% url 'core:order-summary' %}">Location & Vente</a>	
+					</li>	
 					
-
+				
 				</ul>
 			</nav>
 		</div>

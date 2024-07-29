@@ -58,6 +58,18 @@
     border-color: #000;
 }
 
+.modal-content {
+      background: rgba(0, 0, 0, 0.8); /* quasi-transparent black */
+      border: none;
+      border-radius: 10px;
+    }
+    .modal-header, .modal-footer {
+      border: none;
+    }
+    .modal-body {
+      color: #ffff; /* Darker text for better readability */
+    }
+
 .bullet-points p {
             position: relative;
             padding-left: 20px;
@@ -93,20 +105,24 @@
 		<div class="container">
 		  <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
 			<div class="col-12 col-lg-6 col-xl-5">
-			  <img class="img-fluid rounded" loading="lazy" src="{% static 'images/a.jpg' %}" alt="About 1">
+			  <img class="img-fluid rounded" loading="lazy" src="{% static 'images/2.png' %}" alt="About 1">
 			</div>
 			<div class="col-12 col-lg-6 col-xl-7">
 			  <div class="row justify-content-xl-center">
 				<div class="col-12 col-xl-11">
 				  <h2 class="mb-3 text-secondary">Qui sommes nous ?</h2>
-				  <p class="card-text entry-summary text-secondary mb-3">
-					Fondée en 2021, ZESTY MARINE, est spécialisée dans la conciergerie de bateaux. Située stratégiquement à Bizerte, le port de départ idéal pour explorer les côtes tunisiennes et méditerranéennes, ZESTY MARINE profite d'une localisation privilégiée pour offrir des services de conciergerie efficaces et réactifs. Nous sommes à votre écoute pour répondre à tous vos besoins.</p>
-				
+				  <p class="card-text entry-summary text-secondary text-justify mb-3">
+					Atad est une entreprise spécialisée dans la construction métallique et offre une gamme complète de services industriels. Elle se distingue par son expertise en maintenance, moyens de manutention et ingénierie industrielle. Avec un engagement envers la qualité et l'innovation, Atad fournit des solutions personnalisées pour répondre aux besoins spécifiques de ses clients, garantissant des résultats fiables et durables. La société s'efforce de maintenir des standards élevés dans tous ses projets, assurant ainsi la satisfaction et la confiance de ses partenaires industriels.
 				</div>
 			  </div>
 			</div>
 		  </div>
 		</div>
+
+		<div class="t-center">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/LdVK5cJsCQQ?si=GBF99DotItyz0PDP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>							
+		</div>
+			
 	  </section>  
 
 	  <!--Contact -->
@@ -130,7 +146,7 @@
 			<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-10 col-lg-8">
-				<h2 class="display-5 mb-4 text-secondary">Nos services additionnels</h2>
+				<h2 class="display-5 mb-4 text-secondary">Nos Services additionnels</h2>
 				</div>
 			</div>
 			</div>
@@ -140,18 +156,18 @@
 				<div class="col-lg-4">
 				<article>
 					<div class="card border-0">
-					<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/event.jpeg' %}" alt="Evenementiel">
+					<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/tp.jpg' %}" alt="Tinda-Parking">
 					<div class="card-body border bg-white p-4">
 						<div class="entry-header mb-3">
 						<h2 class="card-title entry-title h4 mb-0">
-							<a class="link-dark text-decoration-none" href="#!">Événementiel</a>
+							<a class="link-dark text-decoration-none" href="#!">Tinda-Parking</a>
 						</h2>
 						</div>
-						<button class="btn btn-outline-dark" data-toggle="collapse" data-target="#evenement">Plus ...</button>
-						<p class="collapse card-text entry-summary text-secondary mb-3" id="evenement">
-							Faites de votre prochain événement à bord de votre bateau une expérience inoubliable avec nos services événementiels de premier ordre. Que vous organisiez une fête privée, un mariage en mer, ou une réception d'affaires exclusive, notre équipe de professionnels dévoués s'occupe de chaque détail. De la conception à l'exécution, nous travaillons en étroite collaboration avec vous pour créer des événements uniques et personnalisés qui impressionneront vos invités et laisseront des souvenirs inoubliables. Confiez-nous l'organisation de vos événements nautiques et profitez pleinement de chaque instant.
+						<button class="btn btn-outline-dark" data-toggle="collapse" data-target="#tindaparkings">Plus ...</button>
+						<p class="collapse card-text entry-summary text-secondary mb-3" id="tindaparking">
+							Nous concevons et réalisons des solutions de stationnement sur mesure qui répondent aux besoins spécifiques de chaque client, en garantissant durabilité, sécurité et efficacité. Notre expertise en ingénierie nous permet de créer des parkings optimisés pour un usage maximal de l'espace, tout en respectant les normes de qualité les plus strictes. Que ce soit pour des projets de grande envergure ou des installations plus modestes, ATAD est votre partenaire de confiance pour des solutions de stationnement fiables et durables.
 						</p>
-						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Evenementiel">Devis</button>
+						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Tinda Parking">Devis</button>
 					</div>
 					</div>
 				</article>
@@ -160,21 +176,21 @@
 				<div class="col-lg-4">
 				<article>
 					<div class="card border-0">
-					<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/Interior.jpeg' %}" alt="Our Approach">
+					<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/pc.jpg' %}" alt="portes">
 					<div class="card-body border bg-white p-4">
 						<div class="entry-header mb-3">
 						<h2 class="card-title entry-title h4 mb-0">
-							<a class="link-dark text-decoration-none" href="#!">Décoration</a>
+							<a class="link-dark text-decoration-none" href="#!">Portes Métallique</a>
 						</h2>
 						</div>
 
-						<button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#decoration">
+						<button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#porte">
 							Plus ...
 						</button>
-						<p class="collapse card-text entry-summary text-secondary mb-3" id="decoration">
+						<p class="collapse card-text entry-summary text-secondary mb-3" id="porte">
 							Transformez l'intérieur de votre bateau avec notre service de décoration intérieure sur mesure. Que vous souhaitiez moderniser le salon, ajouter une touche d'élégance à la cabine principale ou créer un espace de détente luxueux, notre équipe de designers experts est là pour réaliser vos rêves. Nous comprenons l'importance de combiner esthétisme et fonctionnalité pour créer des espaces qui reflètent parfaitement votre style et vos besoins. Faites de votre bateau un véritable havre de paix grâce à notre savoir-faire en décoration intérieure.
 						</p>
-						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Décoration">Devis</button>
+						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Porte Métallique">Devis</button>
 						</div>
 
 						
@@ -184,18 +200,18 @@
 				<div class="col-lg-4">
 					<article>
 					<div class="card border-0">
-						<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/b.jpg' %}" alt="Our Vision">
+						<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/composite.jpg' %}" alt="Our Vision">
 						<div class="card-body border bg-white p-4">
 						<div class="entry-header mb-3">
 							<h2 class="card-title entry-title h4 mb-0">
-							<a class="link-dark text-decoration-none" href="#!">Petits travaux et customs</a>
+							<a class="link-dark text-decoration-none" href="#!">Solution Composite</a>
 							</h2>
 						</div>
 						<button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#refit">
 							Plus ...
 						</button>
 						<p class="collapse card-text entry-summary text-secondary mb-3" id="refit">
-							Redonnez vie à votre bateau avec notre service Petits travaux et customs. Que vous souhaitiez moderniser l'intérieur, améliorer les performances techniques, ou simplement rafraîchir l'apparence de votre navire, notre équipe d'experts est prête à intervenir. Nous utilisons des matériaux de qualité supérieure et des techniques de pointe pour garantir que chaque projet est exécuté à la perfection. Faites confiance à notre expertise pour transformer votre bateau en un véritable chef-d'œuvre flottant, prêt à naviguer vers de nouvelles aventures.
+							Atad excelle dans la fabrication de solutions composites, offrant des structures innovantes et résistantes adaptées à divers besoins industriels. Nos solutions composites sont conçues pour allier légèreté, robustesse et durabilité, tout en respectant les normes environnementales. Grâce à notre expertise technique et à l'utilisation de matériaux de haute qualité, nous créons des produits sur mesure qui répondent aux exigences spécifiques de nos clients, assurant performance et fiabilité. Faites confiance à Atad pour des solutions composites qui marient innovation et efficacité.
 						</p>
 						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Petits travaux et customs">Devis</button>
 						</div>

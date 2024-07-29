@@ -5,7 +5,15 @@ ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 DEBUG = True
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'ssl0.ovh.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mailing@atad-tn.com'
+EMAIL_HOST_PASSWORD = 'Mailing0++'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,7 +40,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'demo.urls'

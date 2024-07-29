@@ -18,153 +18,365 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	}
+
+	.modal-content {
+      background: rgba(0, 0, 0, 0.8); /* quasi-transparent black */
+      border: none;
+      border-radius: 10px;
+    }
+    .modal-header, .modal-footer {
+      border: none;
+    }
+    .modal-body {
+      color: #ffff; /* Darker text for better readability */
+    }	
+	
+
+.bullet-points p {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .bullet-points p::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 40px;
+            line-height: 0.5em;
+            color: #877c02; /* Color of the bullet point, can be adjusted */
+        }
+
+		.cardtop {
+			position: absolute;
+            right: 5%; /* Décalage de la carte à droite */
+            top: 30%; 
+            width: 80%; /* Utilisation de pourcentages pour la largeur */
+            max-width: 600px; /* Limite maximale de la largeur */
+            height: auto; /* Hauteur automatique */
+            margin: 7% auto; /* Centrage horizontal et marge en haut */
+            padding: 2%; /* Padding pour le contenu */
+			background: white; /* Couleur de fond pour la carte */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optionnel: ajout d'une ombre */
+            border: 1px solid #ddd; /* Optionnel: bordure pour la carte */
+        }
+        
+        .cardtop-body {
+            margin-top: 5%;
+			margin-left: 80% auto;
+        }
+        
+        .cardtop-title {
+            justify-content: flex-start; 
+            color: black; 
+            font-size: 25px; 
+            font-weight: bold;
+        }
+        
+        .cardtop-text {
+            align-self: center; 
+            text-align: justify; 
+            color: black;
+        }
+        
+        @media (max-width: 500px) {
+            .cardtop {
+				position: absolute;
+				top: 15%; 
+                width: 90%; /* Réduire la largeur sur les petits écrans */
+                margin: 5% auto; /* Ajuster la marge */
+            }
+            
+            .cardtop-title {
+                font-size: 20px; /* Réduire la taille de la police pour les petits écrans */
+            }
+        }
+
+		@media (min-width: 500px) and (max-width: 750px) {
+            .cardtop {
+				position: absolute;
+				top: 15%; 
+                width: 90%; /* Réduire la largeur sur les petits écrans */
+                margin: 5% auto; /* Ajuster la marge */
+            }
+            
+            .cardtop-title {
+                font-size: 20px; /* Réduire la taille de la police pour les petits écrans */
+            }
+        }
+
 </style>
-
+<div class="row"> 
 	<!-- Title Page -->
-	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(/media/{{ category_image }});">
-		<h2 class="l-text2 t-center" style="color:#fff;">
-			Nos services
-		</h2>
+	<div class="item-slick1 p-t-60 p-b-100" style="background-image: url(/static/images/charpente-metallique.jpg); width: 60%;">
+
+		<div class="cardtop">
+			<div class="cardtop-body" style="margin-top: 5%;">
+				<h5 class="cardtop-title">CONSTRUCTION METALLIQUE</h5>
+	
+				<p class="cardtop-text t-center">
+					Atad excelle dans la construction métallique, offrant des solutions complètes et personnalisées pour vos projets industriels et commerciaux. Nos services incluent la conception, la fabrication et l'installation de structures métalliques robustes et durables. Nous utilisons des matériaux de haute qualité et des techniques de pointe pour garantir la sécurité, la résistance et l'esthétique de nos constructions. Que ce soit pour des bâtiments, des ponts, ou des infrastructures spécifiques, Atad s'engage à fournir des résultats de haute précision et à respecter les délais impartis. Faites confiance à Atad pour vos besoins en construction métallique.
+				</p>
+			</div>
+	
+		</div>
+	</div>
+
+</div>
+
+
+	<!-- Content page -->
+	<section class="py-3 py-md-5 py-xl-8">
 		
-	</section>
-
-
-		<section class="py-3 py-md-5 py-xl-8">
-		<div class="container">
-			<p class="m-text13 t-center" style="color: #495057;">
-				Une description de nos services
-				
-			</p>
-
-	
-	  		
-		<div class="container overflow-hidden">
-		  <div class="row gy-4 gy-lg-0">
-	
-			<div class="col-12 col-lg-6">
-			  <article>
-				<div class="card border-0">
-				  <img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/int.jpg' %}" alt="Our Vision">
-				  <div class="card-body border bg-white p-4">
-					<div class="entry-header mb-3">
-					  <h2 class="card-title entry-title h4 mb-0">
-						<a class="link-dark text-decoration-none" href="#!">Nettoyage et entretien intérieur</a>
-					  </h2>
+		<div class="container mt-1" id="charpente">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<img src="{% static 'images/charpentemetallique.jpeg' %}" class="card-img" alt="Image">
 					</div>
-					<p class="card-text entry-summary text-secondary mb-3">
-						Offrez à l'intérieur de votre bateau un nettoyage et un entretien professionnels pour maintenir son allure luxueuse et son confort optimal. Notre équipe expérimentée s'occupe de tout, du dépoussiérage minutieux au nettoyage des surfaces délicates, en passant par l'entretien des textiles et des cuirs. Profitez d'un espace intérieur impeccable et accueillant à chaque sortie en mer grâce à notre service de qualité supérieure.
-					
-					</p>
-					<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Nettoyage et Entretien Interieur">Reserver</button>
-				  </div>
-				</div>
-			  </article>
-			</div>
-	
-			<div class="col-12 col-lg-6">
-			  <article>
-				<div class="card border-0">
-				  <img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/ext.jpg' %}" alt="Our Approach">
-				  <div class="card-body border bg-white p-4">
-					<div class="entry-header mb-3">
-					  <h2 class="card-title entry-title h4 mb-0">
-						<a class="link-dark text-decoration-none" href="#!">Nettoyage et entretien extérieur</a>
-					  </h2>
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Charpente Métallique</h5>
+							<p class="card-text text-justify" style="color: black;">
+								Nos charpentes métalliques sont conçues pour offrir une robustesse et une durabilité exceptionnelles, adaptées à divers types de bâtiments et infrastructures. Nous utilisons des matériaux de haute qualité et des techniques de pointe pour garantir des structures fiables et résistantes. Que ce soit pour des projets industriels, commerciaux ou résidentiels, Atad s'engage à fournir des solutions sur mesure qui répondent aux besoins spécifiques de chaque client. Faites confiance à Atad pour vos projets de charpente métallique.
+							</p>
+							<button type="button" class="btn btn-outline-primary t-center" data-toggle="modal" data-target="#exampleModal" data-whatever="Charpente Métallique">Demander un devis</button>
+						</div>
 					</div>
-					<p class="card-text entry-summary text-secondary mb-3">
-						Assurez la longévité et la beauté de l'extérieur de votre bateau avec notre service de nettoyage et entretien spécialisé. Nous proposons des traitements complets pour la coque, le pont, et toutes les surfaces extérieures, en utilisant des produits respectueux de l'environnement et des techniques efficaces. Que ce soit pour un lavage en profondeur, un polissage ou un traitement antirouille, nous veillons à ce que votre bateau reste en parfait état, prêt pour toutes vos aventures nautiques.
-					</p>
-					<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Nettoyage et Entretien Extérieur">Reserver</button>
-				  </div>
 				</div>
-			  </article>
 			</div>
-	
-		  </div>
+		</div>
+		
+		<div class="container mt-1" id="abris">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Abris</h5>
+							<p class="card-text text-justify" style="color: black; text-align: justify;">
+								Nos abris, robustes et esthétiques, offrent une protection optimale contre les intempéries et sont installés par des professionnels. Avec un service après-vente exceptionnel et un engagement envers l'innovation durable, Atad garantit des produits performants et respectueux de l'environnement. Contactez-nous pour un devis personnalisé.
+							</p>
+							<div style="align-items: center;">
+								<button style="align-items: center;" type="button" class="btn btn-outline-primary center" data-toggle="modal" data-target="#exampleModal" data-whatever="Abris" >Demander un devis</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<img src="{% static 'images/abris.jpg' %}" class="card-img" alt="Image">
+					</div>
+				</div>
+			</div>
 		</div>
 
 
-		
-
-		<div class="container overflow-hidden">
-			<div class="row gy-4 gy-lg-0">
-	  
-			  <div class="col-12 col-lg-6">
-				<article>
-				  <div class="card border-0">
-					<img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/rsv.jpg' %}" alt="Our Vision">
-					<div class="card-body border bg-white p-4">
-					  <div class="entry-header mb-3">
-						<h2 class="card-title entry-title h4 mb-0">
-						  <a class="link-dark text-decoration-none" href="#!">Gestion des Réservations</a>
-						</h2>
-					  </div>
-					  <p class="card-text entry-summary text-secondary mb-3">
-						Simplifiez vos escales avec notre service de gestion des réservations. Nous nous chargeons de toutes vos réservations de marinas et ports d'attache, vous assurant une place sécurisée à chaque étape de votre voyage. De plus, nous coordonnons vos réservations de restaurants, événements et excursions pour que vous puissiez profiter pleinement de chaque destination sans le moindre souci logistique. Profitez d’une navigation sereine et d’escales parfaitement organisées grâce à notre expertise.
-					  </p>
-					  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Réservation Marina">Reserver</button>
-					</div>
-				  </div>
-				</article>
-			  </div>
-	  
-			
-	  
-			  <div class="col-12 col-lg-6">
-				  <article>
-					<div class="card border-0">
-					  <img class="card-img-top img-fluid m-0" loading="lazy" src="{% static 'images/vtc.jpg' %}" alt="Our Vision">
-					  <div class="card-body border bg-white p-4">
-						<div class="entry-header mb-3">
-						  <h2 class="card-title entry-title h4 mb-0">
-							<a class="link-dark text-decoration-none" href="#!">Services de Transport</a>
-						  </h2>
+		<div class="container mt-1" id="portes">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<div class="card-body t-center">
+							<div class="row col-12" > 
+								<div class="col-md-4">
+									<img src="{% static 'images/rideaux.jpg' %}" width="100" height="100" />
+									<h6>Rideaux Métallique</h6>
+								</div>
+								<div class="col-md-4">
+									<img src="{% static 'images/portesecours.jpg' %}"  width="100" height="100" />
+									<h6>Porte Secours</h6>
+								</div>
+								<div class="col-md-4">
+									<img src="{% static 'images/pcoul.jpeg' %}"  width="100" height="100"/>
+									<h6>Porte Industrielle</h6>
+								</div>
+						    </div>
+							<div class="row col-12" > 
+								<div class="col-md-4">
+									<img src="{% static 'images/pr.jpeg' %}"  width="100" height="100" />
+									<h6>Porte Rapide</h6>
+								</div>
+								<div class="col-md-4">
+									<img src="{% static 'images/portecouli.jpeg' %}"  width="100" height="100"/>
+									<h6>Porte Coulissante</h6>
+								</div>
+								<div class="col-md-4">
+									<img src="{% static 'images/pferg.jpeg' %}"  width="100" height="100"/>
+									<h6>Porte Fer forgé</h6>
+								</div>
+						    </div>
 						</div>
-						<p class="card-text entry-summary text-secondary mb-3">
-							Naviguez sans tracas grâce à notre service de transport premium. Nous organisons vos transferts en limousine, taxi ou hélicoptère, assurant des déplacements confortables et ponctuels. Besoin de mobilité à terre? Nous proposons également la location de véhicules ou de scooters pour que vous puissiez explorer chaque destination en toute liberté. Avec notre service de transport, chaque aspect de votre voyage est pris en charge avec soin et précision.
-						</p>
-					  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Service de Transport">Reserver</button>
-					  </div>
 					</div>
-				  </article>
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Nos Portes</h5>
+							<p class="card-text text-justify" style="color: black; text-align: justify;">
+								Nos portes métalliques, conçues avec des matériaux de première qualité, garantissent sécurité et durabilité. Avec une installation professionnelle et un service après-vente exceptionnel, Atad s'engage à fournir des produits performants tout en intégrant des pratiques durables. Contactez-nous pour un devis personnalisé.
+							</p>
+							<div style="align-items: center;">
+								<button style="align-items: center;" type="button" class="btn btn-outline-primary center" data-toggle="modal" data-target="#exampleModal" data-whatever="Portes Métallique" >Demander un devis</button>
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
-		  </div>
+		</div>
+
+
+		<div class="container mt-1" id="escalier">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<img src="{% static 'images/escal.jpg' %}" class="card-img" alt="Image" />
+
+						<div class="t-center" style="align-items: center; margin: 10px;">
+						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Escaliers" >Demander un devis</button>
+						</div>
+						
+					</div>
+					<div class="col-md-6">
+						<img src="{% static 'images/mezza.jpg' %}" class="card-img" alt="Image" />
+
+						<div class="t-center" style="align-items: center; margin: 10px;">
+							<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Mezzanine" >Demander un devis</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container mt-1" id="cabine">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<img src="{% static 'images/cabine.jpg' %}" class="card-img" alt="Image" />
+
+						<div class="t-center" style="align-items: center; margin: 10px;">
+						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Cabine Chantier" >Demander un devis</button>
+						</div>
+						
+					</div>
+					<div class="col-md-6">
+						<img src="{% static 'images/bureau.jpg' %}" class="card-img" alt="Image" />
+
+						<div class="t-center" style="align-items: center; margin: 10px;">
+							<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Cabine Chantier" >Demander un devis</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
 
 	
-
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<div class="modal-body">
-				  <form>
-					<div class="form-group">
-					  <label for="recipient-name" class="col-form-label">Objet:</label>
-					  <input type="text" class="form-control" id="recipient-name">
+		<div class="container mt-1" id="reservoir">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<div class="card-body t-center mt-5">
+							<h5 class="card-title entry-title">Reservoir</h5>
+								<p class="card-text" style="color: black; text-align: justify;">
+									Atad, spécialisée dans la fabrication et l'installation de réservoirs de haute qualité, offre des solutions durables et fiables pour le stockage de liquides dans divers secteurs industriels. Nos réservoirs, conçus avec des matériaux robustes, assurent une résistance optimale et une longue durée de vie. Avec une installation professionnelle et un service après-vente exceptionnel, Atad s'engage à fournir des produits performants tout en intégrant des pratiques durables. Contactez-nous pour un devis personnalisé.
+								</p>
+							
+							<button type="button" class="btn btn-outline-primary t-center" data-toggle="modal" data-target="#exampleModal" data-whatever="Reservoir" >Demander un devis</button>
+						</div>
 					</div>
-					<div class="form-group">
-					  <label for="message-text" class="col-form-label">Message:</label>
-					  <textarea class="form-control" id="message-text"></textarea>
+					<div class="col-md-6">
+						<img src="{% static 'images/reservoir.jpg' %}" class="card-img" alt="Image">
 					</div>
-				  </form>
 				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-				  <button type="button" class="btn btn-primary">Envoyer</button>
-				</div>
-			  </div>
 			</div>
-		  </div>
+		</div>
 
+		<div class="container mt-1" id="fonderie">
+			<div class="card">
+				<div class="row no-gutters">
+					<div class="col-md-6">
+						<img src="{% static 'images/Fonderie.jpg' %}" class="card-img" alt="Image">
+					</div>
+					<div class="col-md-6">
+						<div class="card-body t-center">
+							<h5 class="card-title entry-title">Fonderie & Moulage</h5>
+							<p class="card-text" style="color: black; text-align: justify;">
+							La société Atad, spécialisée dans la fonderie et le moulage, propose des solutions de haute qualité pour la production de pièces métalliques sur mesure. Utilisant des matériaux robustes et des technologies de pointe, nous garantissons des produits durables et précis adaptés aux besoins spécifiques de divers secteurs industriels. Avec une expertise avérée et un service client exceptionnel, Atad s'engage à fournir des solutions performantes et fiables. Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé.
+							</p>
+							<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="Fonderie & Moulage" >Demander un devis</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+	
+
+		<!-----------------Modal du Formualire de Devis --------------------------->
+		
 	  </section>
 
-	
-	  
 
-	{% endblock content %}
+	  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-body">
+			  <form>
+				<div class="form-group row center">
+					<label class="control-label col-sm-2" for="name">Nom & Prenom:</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="name" placeholder="Entrer votre Nom et Prenom">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label class="control-label col-sm-2" for="tel">Tel:</label>
+					<div class="col-sm-10">
+					  <input type="tel" class="form-control" id="tel" placeholder="Entrer votre Numéro de Télephone">
+					</div>
+				  </div>
+
+				  <div class="form-group row">
+					<label class="control-label col-sm-2" for="email">Email:</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="email" placeholder="Entrer votre email">
+					</div>
+				  </div>
+					<div class="form-group row mt-3">
+						<label class="control-label col-sm-2" for="tel">Objet:</label>
+						<div class="col-sm-10">
+						  <input type="texte" class="form-control" id="object">
+						</div>
+					  </div>
+				
+				<div class="form-group">
+				  <label for="message-text" class="col-form-label">Message:</label>
+				  <textarea class="form-control" id="message-text"></textarea>
+				</div>
+			  </form>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+			  <button type="button" class="btn btn-primary" id="envoyer">Envoyer</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+	  <div class="modal fade" id="statusSuccessModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
+		<div class="modal-dialog modal-dialog-centered modal-sm" role="document"> 
+			<div class="modal-content"> 
+				<div class="modal-body text-center p-lg-4"> 
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+						<circle class="path circle" fill="none" stroke="#198754" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+						<polyline class="path check" fill="none" stroke="#198754" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /> 
+					</svg> 
+					<h4 class="text-success mt-3">Demande de devis envoyée !</h4> 
+					<p class="mt-3">Nous vous remercions.</p>
+					<button id="okval" type="button" class="btn btn-sm mt-3 btn-success" data-bs-dismiss="modal">Ok</button> 
+				</div> 
+			</div> 
+		</div> 
+	</div>
+
+		{% endblock content %}
